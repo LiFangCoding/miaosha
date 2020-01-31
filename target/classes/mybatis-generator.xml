@@ -4,39 +4,35 @@
     "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-  <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />
-
   <context id="DB2Tables" targetRuntime="MyBatis3">
-    <jdbcConnection driverClass="COM.ibm.db2.jdbc.app.DB2Driver"
-                    connectionURL="jdbc:db2:TEST"
-                    userId="db2admin"
-                    password="db2admin">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://127.0.0.1:52000/miaosha"
+                    userId="root"
+                    password="miaosharoot">
     </jdbcConnection>
-
-    <javaTypeResolver >
-      <property name="forceBigDecimals" value="false" />
+=
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
     </javaTypeResolver>
 
-    <javaModelGenerator targetPackage="test.model" targetProject="\MBGTestProject\src">
-      <property name="enableSubPackages" value="true" />
-      <property name="trimStrings" value="true" />
+    <!--places for generated DataObject-->
+    <javaModelGenerator targetPackage="com.coding.miaosha.dataobject" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true"/>
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="test.xml"  targetProject="\MBGTestProject\src">
-      <property name="enableSubPackages" value="true" />
+    <!--places for generated mapping flies-->
+    <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+      <property name="enableSubPackages" value="true"/>
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="\MBGTestProject\src">
-      <property name="enableSubPackages" value="true" />
+    <!--places for generated Dao class -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.coding.miaosha.dao" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
 
-    <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
-      <property name="useActualColumnNames" value="true"/>
-      <generatedKey column="ID" sqlStatement="DB2" identity="true" />
-      <columnOverride column="DATE_FIELD" property="startDate" />
-      <ignoreColumn column="FRED" />
-      <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
-    </table>
-
+    <!--gengerated table and class-->
+    <table schema="miaosha" tableName="user_info" domainObjectName="UserDO"></table>
+    <table schema="miaosha" tableName="user_password" domainObjectName="UserPasswordDO"></table>
   </context>
 </generatorConfiguration>

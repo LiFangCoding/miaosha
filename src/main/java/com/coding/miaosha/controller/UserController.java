@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,7 +31,7 @@ public class UserController extends BaseController{
   /**
    * User get opt message interface
    */
-  @RequestMapping("/getotp")
+  @PostMapping(value="/getotp", consumes={CONTENT_TYPE_FORMED})
   @ResponseBody
   public CommonReturnType getOtp(@RequestParam(name="telephone") String telephone) {
     /**
@@ -45,7 +46,6 @@ public class UserController extends BaseController{
      * Connect OTP code with user telephone num. Use httpsession to combine telephone and code
      */
     httpServletRequest.getSession().setAttribute(telephone, otpCode);
-
 
     /**
      * Send OTP code to user by message tunnel

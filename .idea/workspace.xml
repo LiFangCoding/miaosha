@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbb54ac0-1f96-482a-9bc8-942398ba2d0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/error/EmBusinessError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/error/EmBusinessError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/response/CommonReturnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/response/CommonReturnType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,9 +113,9 @@
     <property name="database.console.LAST_STATE" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.11976045" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -240,7 +236,7 @@
       <workItem from="1580439163336" duration="339000" />
       <workItem from="1580445335582" duration="556000" />
       <workItem from="1580445924989" duration="1586000" />
-      <workItem from="1580686959764" duration="13410000" />
+      <workItem from="1580686959764" duration="15330000" />
     </task>
     <task id="LOCAL-00001" summary="add config for mybatis generator">
       <created>1580371095695</created>
@@ -291,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580693978792</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor User Controller with error">
+      <created>1580712122397</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580712122397</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -313,7 +316,8 @@
     <MESSAGE value="add User Contoller and lombok" />
     <MESSAGE value="add CommonReturnType for return status and data" />
     <MESSAGE value="add CommonError and BusinessException" />
-    <option name="LAST_COMMIT_MESSAGE" value="add CommonError and BusinessException" />
+    <MESSAGE value="Refactor User Controller with error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor User Controller with error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="489" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1580693329538">
@@ -324,9 +328,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="438" y="292" width="564" height="328" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580709575064" />
-    <state x="216" y="22" key="CommitChangelistDialog2" timestamp="1580693978385">
-      <screen x="0" y="22" width="1440" height="878" />
+    <state x="216" y="0" width="1007" height="900" key="CommitChangelistDialog2" timestamp="1580712121972">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="216" y="0" width="1007" height="900" key="CommitChangelistDialog2/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580712121972" />
     <state x="216" y="22" key="CommitChangelistDialog2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693978385" />
     <state width="1388" height="300" key="GridCell.Tab.0.bottom" timestamp="1580712071570">
       <screen x="0" y="0" width="1440" height="900" />
@@ -389,14 +394,16 @@
     </state>
     <state x="145" y="32" key="Maven.ArtifactSearchDialog/0.0.1440.900/-282.-1058.1920.1058@0.0.1440.900" timestamp="1580707218683" />
     <state x="145" y="32" key="Maven.ArtifactSearchDialog/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580708050724" />
-    <state x="-282" y="-1080" width="1229" height="878" key="SettingsEditor" timestamp="1580694723214">
-      <screen x="-282" y="-1080" width="1920" height="1080" />
+    <state x="0" y="0" width="937" height="737" key="SettingsEditor" timestamp="1580712876377">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-282" y="-1080" key="SettingsEditor/0.0.1440.900/-282.-1080.1920.1080@-282.-1080.1920.1080" timestamp="1580694723214" />
+    <state x="0" y="0" width="937" height="737" key="SettingsEditor/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580712876377" />
     <state x="0" y="22" width="1229" height="878" key="SettingsEditor/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580690401681" />
-    <state x="220" y="138" key="Vcs.Push.Dialog.v2" timestamp="1580693980382">
-      <screen x="0" y="22" width="1440" height="878" />
+    <state x="220" y="119" key="Vcs.Push.Dialog.v2" timestamp="1580712124599">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="220" y="119" key="Vcs.Push.Dialog.v2/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580712124599" />
     <state x="220" y="138" key="Vcs.Push.Dialog.v2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693980382" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1580446171599">
       <screen x="0" y="22" width="1440" height="878" />
@@ -407,55 +414,5 @@
     </state>
     <state x="301" y="0" width="838" height="1058" key="search.everywhere.popup/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580696236276" />
     <state x="301" y="22" width="838" height="1032" key="search.everywhere.popup/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580688794810" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8.0_181</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>openJdk-1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

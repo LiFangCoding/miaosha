@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbb54ac0-1f96-482a-9bc8-942398ba2d0a" name="Default Changelist" comment="add User Contoller and lombok">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/response/CommonReturnType.java" afterDir="false" />
+    <list default="true" id="bbb54ac0-1f96-482a-9bc8-942398ba2d0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/error/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/error/CommonError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/error/EmBusinessError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/service/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/service/model/UserModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +69,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -239,7 +241,7 @@
       <workItem from="1580439163336" duration="339000" />
       <workItem from="1580445335582" duration="556000" />
       <workItem from="1580445924989" duration="1586000" />
-      <workItem from="1580686959764" duration="4696000" />
+      <workItem from="1580686959764" duration="6063000" />
     </task>
     <task id="LOCAL-00001" summary="add config for mybatis generator">
       <created>1580371095695</created>
@@ -276,13 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1580691202041</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add CommonReturnType for return status and data">
+      <created>1580692695119</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580692695119</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="AppTest_shouldAnswerWithTrue - 2020.01.27 at 15h 40m 00s.xml">
-      <configuration name="AppTest.shouldAnswerWithTrue" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,36 +305,37 @@
     <MESSAGE value="config mybatis generator successfully" />
     <MESSAGE value="add conf" />
     <MESSAGE value="add User Contoller and lombok" />
-    <option name="LAST_COMMIT_MESSAGE" value="add User Contoller and lombok" />
+    <MESSAGE value="add CommonReturnType for return status and data" />
+    <option name="LAST_COMMIT_MESSAGE" value="add CommonReturnType for return status and data" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1580690099873">
+    <state x="489" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1580693329538">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state x="489" y="78" key="#com.intellij.ide.util.MemberChooser/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580690099873" />
-    <state x="216" y="22" key="CommitChangelistDialog2" timestamp="1580691291033">
+    <state x="489" y="78" key="#com.intellij.ide.util.MemberChooser/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693329538" />
+    <state x="216" y="22" key="CommitChangelistDialog2" timestamp="1580692694686">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state x="216" y="22" key="CommitChangelistDialog2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580691291033" />
-    <state width="1388" height="253" key="GridCell.Tab.0.bottom" timestamp="1580692545524">
+    <state x="216" y="22" key="CommitChangelistDialog2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580692694686" />
+    <state width="1388" height="253" key="GridCell.Tab.0.bottom" timestamp="1580693929979">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state width="1388" height="253" key="GridCell.Tab.0.bottom/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580692545524" />
+    <state width="1388" height="253" key="GridCell.Tab.0.bottom/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693929979" />
     <state width="1868" height="418" key="GridCell.Tab.0.bottom/0.22.1920.1058@0.22.1920.1058" timestamp="1580447530825" />
-    <state width="1388" height="253" key="GridCell.Tab.0.center" timestamp="1580692545523">
+    <state width="1388" height="253" key="GridCell.Tab.0.center" timestamp="1580693929977">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state width="1388" height="253" key="GridCell.Tab.0.center/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580692545523" />
+    <state width="1388" height="253" key="GridCell.Tab.0.center/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693929977" />
     <state width="1868" height="418" key="GridCell.Tab.0.center/0.22.1920.1058@0.22.1920.1058" timestamp="1580447530824" />
-    <state width="1388" height="253" key="GridCell.Tab.0.left" timestamp="1580692545523">
+    <state width="1388" height="253" key="GridCell.Tab.0.left" timestamp="1580693929976">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state width="1388" height="253" key="GridCell.Tab.0.left/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580692545523" />
+    <state width="1388" height="253" key="GridCell.Tab.0.left/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693929976" />
     <state width="1868" height="418" key="GridCell.Tab.0.left/0.22.1920.1058@0.22.1920.1058" timestamp="1580447530823" />
-    <state width="1388" height="253" key="GridCell.Tab.0.right" timestamp="1580692545524">
+    <state width="1388" height="253" key="GridCell.Tab.0.right" timestamp="1580693929978">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state width="1388" height="253" key="GridCell.Tab.0.right/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580692545524" />
+    <state width="1388" height="253" key="GridCell.Tab.0.right/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693929978" />
     <state width="1868" height="418" key="GridCell.Tab.0.right/0.22.1920.1058@0.22.1920.1058" timestamp="1580447530824" />
     <state width="1388" height="331" key="GridCell.Tab.1.bottom" timestamp="1580689821625">
       <screen x="0" y="22" width="1440" height="878" />
@@ -356,10 +361,10 @@
       <screen x="0" y="22" width="1440" height="878" />
     </state>
     <state x="0" y="22" width="1229" height="878" key="SettingsEditor/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580690401681" />
-    <state x="220" y="138" key="Vcs.Push.Dialog.v2" timestamp="1580691204742">
+    <state x="220" y="138" key="Vcs.Push.Dialog.v2" timestamp="1580692696200">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
-    <state x="220" y="138" key="Vcs.Push.Dialog.v2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580691204742" />
+    <state x="220" y="138" key="Vcs.Push.Dialog.v2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580692696200" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1580446171599">
       <screen x="0" y="22" width="1440" height="878" />
     </state>
@@ -374,7 +379,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java</url>
-          <line>24</line>
+          <line>26</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

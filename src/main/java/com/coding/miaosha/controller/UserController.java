@@ -1,6 +1,8 @@
 package com.coding.miaosha.controller;
 
 import com.coding.miaosha.controller.viewobject.UserVO;
+import com.coding.miaosha.error.BusinessException;
+import com.coding.miaosha.error.EmBusinessError;
 import com.coding.miaosha.response.CommonReturnType;
 import com.coding.miaosha.service.UserService;
 import com.coding.miaosha.service.model.UserModel;
@@ -21,11 +23,14 @@ public class UserController {
 
   @GetMapping("/get")
   @ResponseBody
-  public CommonReturnType getUser(@RequestParam(name = "id") Integer id) {
+  public CommonReturnType getUser(@RequestParam(name = "id") Integer id) throws BusinessException {
     UserModel userModel = userService.getUserById(id);
+
+    if (userModel == null) {
+      throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
+    }
     // the domain user model convert to viewobject for UI
     UserVO userVO = convertFromModel(userModel);
-
     // return common type
     return CommonReturnType.create(userVO);
   }

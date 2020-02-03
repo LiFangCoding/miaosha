@@ -10,7 +10,7 @@
                     userId="root"
                     password="miaosharoot">
     </jdbcConnection>
-=
+
     <javaTypeResolver>
       <property name="forceBigDecimals" value="false"/>
     </javaTypeResolver>
@@ -32,7 +32,12 @@
     </javaClientGenerator>
 
     <!--gengerated table and class-->
-    <table schema="miaosha" tableName="user_info" domainObjectName="UserDO"></table>
-    <table schema="miaosha" tableName="user_password" domainObjectName="UserPasswordDO"></table>
+    <table schema="miaosha" tableName="user_info" domainObjectName="UserDO" enableCountByExample="false"
+           enableUpdateByExample="false" enableDeleteByExample="false"
+           enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    <table schema="miaosha" tableName="user_password" domainObjectName="UserPasswordDO" enableCountByExample="false"
+           enableUpdateByExample="false" enableDeleteByExample="false"
+           enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
   </context>
 </generatorConfiguration>

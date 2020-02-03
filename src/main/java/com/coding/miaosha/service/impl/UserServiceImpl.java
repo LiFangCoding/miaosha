@@ -22,8 +22,11 @@ public class UserServiceImpl implements UserService {
   @Override
   public UserModel getUserById(Integer id) {
     UserDO userDO = userDOMapper.selectByPrimaryKey(id);
-    UserPasswordDO userPasswordDO = userPasswordDOMapper.selectByUserId(userDO.getId());
+    if (userDO == null) {
+      return null;
+    }
 
+    UserPasswordDO userPasswordDO = userPasswordDOMapper.selectByUserId(userDO.getId());
     return convertFromDataObject(userDO, userPasswordDO);
   }
 

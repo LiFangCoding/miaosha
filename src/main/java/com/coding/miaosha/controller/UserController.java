@@ -1,6 +1,7 @@
 package com.coding.miaosha.controller;
 
 import com.coding.miaosha.controller.viewobject.UserVO;
+import com.coding.miaosha.response.CommonReturnType;
 import com.coding.miaosha.service.UserService;
 import com.coding.miaosha.service.model.UserModel;
 import org.springframework.beans.BeanUtils;
@@ -20,9 +21,13 @@ public class UserController {
 
   @GetMapping("/get")
   @ResponseBody
-  public UserVO getUser(@RequestParam(name = "id") Integer id) {
+  public CommonReturnType getUser(@RequestParam(name = "id") Integer id) {
     UserModel userModel = userService.getUserById(id);
-    return convertFromModel(userModel);
+    // the domain user model convert to viewobject for UI
+    UserVO userVO = convertFromModel(userModel);
+
+    // return common type
+    return CommonReturnType.create(userVO);
   }
 
   private UserVO convertFromModel(UserModel userModel) {

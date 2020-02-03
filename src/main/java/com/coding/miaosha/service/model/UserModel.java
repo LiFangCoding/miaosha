@@ -11,7 +11,7 @@ public class UserModel {
   private Integer age;
   private String telephone;
   private String registerMode;
-  private String thirdParyId;
+  private String thirdPartyId;
 
   private String encryptPassword;
 }

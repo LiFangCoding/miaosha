@@ -1,22 +1,25 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="bootstrap/css/components.min.css" rel="stylesheet" type="text/css"/>
+  <link href="bootstrap/css/login.css" rel="stylesheet" type="text/css"/>
   <script src="script/jquery-1.11.0.min.js" type="text/javascript"></script>
 </head>
 
-<body>
-<div>
-  <h3>Get otp info</h3>
-  <div>
+<body class="login">
+<div class="content">
+  <h3 class="form-title">Get otp info</h3>
+  <div class="form-group">
     <label>
       telephone num
     </label>
     <div>
-      <input type="text" placeholder="telephone num here" name="telephone" id="telephone">
+      <input class="form-control" type="text" placeholder="telephone num here" name="telephone" id="telephone">
     </div>
   </div>
-  <div>
-    <button id="getotp" type= >
+  <div class="form-actions">
+    <button class="btn blue" id="getotp" type= >
       Get otp message
     </button>
   </div>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbb54ac0-1f96-482a-9bc8-942398ba2d0a" name="Default Changelist" comment="add support for the message user">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/html/getotp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/html/script/jquery-1.11.0.min.js" afterDir="false" />
+    <list default="true" id="bbb54ac0-1f96-482a-9bc8-942398ba2d0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/bootstrap/css/components.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/html/bootstrap/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coding/miaosha/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/html/getotp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/html/getotp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580439119607" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/html/script" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/html/bootstrap/css" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -127,6 +128,7 @@
       <recent name="com.coding.miaosha" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/html/bootstrap/css" />
       <recent name="$PROJECT_DIR$/src/main/resources/html/script" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -243,7 +245,7 @@
       <workItem from="1580439163336" duration="339000" />
       <workItem from="1580445335582" duration="556000" />
       <workItem from="1580445924989" duration="1586000" />
-      <workItem from="1580686959764" duration="19427000" />
+      <workItem from="1580686959764" duration="20526000" />
     </task>
     <task id="LOCAL-00001" summary="add config for mybatis generator">
       <created>1580371095695</created>
@@ -308,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580715175193</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add front html and ajax with crossOrigin">
+      <created>1580802597050</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580802597050</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -332,7 +341,8 @@
     <MESSAGE value="add CommonError and BusinessException" />
     <MESSAGE value="Refactor User Controller with error" />
     <MESSAGE value="add support for the message user" />
-    <option name="LAST_COMMIT_MESSAGE" value="add support for the message user" />
+    <MESSAGE value="add front html and ajax with crossOrigin" />
+    <option name="LAST_COMMIT_MESSAGE" value="add front html and ajax with crossOrigin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="489" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1580693329538">
@@ -343,10 +353,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="438" y="292" width="564" height="328" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580709575064" />
-    <state x="216" y="0" width="1007" height="900" key="CommitChangelistDialog2" timestamp="1580790097300">
+    <state x="216" y="0" width="1007" height="900" key="CommitChangelistDialog2" timestamp="1580802596514">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="216" y="0" width="1007" height="900" key="CommitChangelistDialog2/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580790097300" />
+    <state x="216" y="0" width="1007" height="900" key="CommitChangelistDialog2/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580802596514" />
     <state x="216" y="22" key="CommitChangelistDialog2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693978385" />
     <state width="1388" height="300" key="GridCell.Tab.0.bottom" timestamp="1580802542412">
       <screen x="0" y="0" width="1440" height="900" />
@@ -415,10 +425,10 @@
     <state x="-282" y="-1080" key="SettingsEditor/0.0.1440.900/-282.-1080.1920.1080@-282.-1080.1920.1080" timestamp="1580694723214" />
     <state x="0" y="0" width="937" height="737" key="SettingsEditor/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580712876377" />
     <state x="0" y="22" width="1229" height="878" key="SettingsEditor/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580690401681" />
-    <state x="220" y="119" key="Vcs.Push.Dialog.v2" timestamp="1580715177019">
+    <state x="220" y="119" key="Vcs.Push.Dialog.v2" timestamp="1580802599743">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="220" y="119" key="Vcs.Push.Dialog.v2/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580715177019" />
+    <state x="220" y="119" key="Vcs.Push.Dialog.v2/0.0.1440.900/-282.-1080.1920.1080@0.0.1440.900" timestamp="1580802599743" />
     <state x="220" y="138" key="Vcs.Push.Dialog.v2/0.22.1440.878/-282.-1058.1920.1058@0.22.1440.878" timestamp="1580693980382" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1580446171599">
       <screen x="0" y="22" width="1440" height="878" />

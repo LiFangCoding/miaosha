@@ -7,7 +7,7 @@ import lombok.Setter;
 public class UserModel {
   private Integer id;
   private String name;
-  private Byte gender;
+  private String gender;
   private Integer age;
   private String telephone;
   private String registerMode;

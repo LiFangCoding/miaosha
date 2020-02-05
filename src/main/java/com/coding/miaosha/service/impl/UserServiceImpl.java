@@ -4,11 +4,16 @@ import com.coding.miaosha.dao.UserDOMapper;
 import com.coding.miaosha.dao.UserPasswordDOMapper;
 import com.coding.miaosha.dataobject.UserDO;
 import com.coding.miaosha.dataobject.UserPasswordDO;
+import com.coding.miaosha.error.BusinessException;
+import com.coding.miaosha.error.EmBusinessError;
 import com.coding.miaosha.service.UserService;
 import com.coding.miaosha.service.model.UserModel;
+import org.apache.catalina.User;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -28,6 +33,52 @@ public class UserServiceImpl implements UserService {
 
     UserPasswordDO userPasswordDO = userPasswordDOMapper.selectByUserId(userDO.getId());
     return convertFromDataObject(userDO, userPasswordDO);
+  }
+
+  @Override
+  @Transactional
+  public void register(UserModel userModel) throws BusinessException {
+    if (userModel == null) {
+      throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
+    }
+
+    if (StringUtils.isNotEmpty(userModel.getName())
+        || userModel.getGender() == null
+        || userModel.getAge() == null
+    ||StringUtils.isEmpty(userModel.getTelephone())) {
+      throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
+    }
+
+    UserDO userDO = convertFromModel(userModel);
+    userDOMapper.insertSelective(userDO);
+
+    UserPasswordDO userPasswordDO = convertPasswordFromModel(userModel);
+    userPasswordDOMapper.insertSelective(userPasswordDO);
+
+    return;
+  }
+
+  private UserPasswordDO convertPasswordFromModel(UserModel userModel) {
+    if (userModel == null) {
+      return null;
+    }
+
+    UserPasswordDO userPasswordDO = new UserPasswordDO();
+    userPasswordDO.setEncrptPassword(userModel.getEncryptPassword());
+    userPasswordDO.setUserId(userModel.getId());
+    return userPasswordDO;
+  }
+
+  private UserDO convertFromModel(UserModel userModel) {
+    if (userModel == null) {
+      return null;
+    }
+
+    UserDO userDO = new UserDO();
+    // convert model to dataobject
+    BeanUtils.copyProperties(userModel, userDO);
+
+    return userDO;
   }
 
   private UserModel convertFromDataObject(UserDO userDO, UserPasswordDO userPasswordDO) {

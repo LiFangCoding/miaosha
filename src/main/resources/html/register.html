@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="contorl-label">
+    <label class="control-label">
       Verification code
     </label>
     <div>
@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="contorl-label">
+    <label class="control-label">
       user name
     </label>
     <div>
@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="contorl-label">
+    <label class="control-label">
       Gender
     </label>
     <div>
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="contorl-label">
+    <label class="control-label">
       Age
     </label>
     <div>
@@ -51,15 +51,15 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="contorl-label">
+    <label class="control-label">
       Password
     </label>
     <div>
-      <input class="form-control" type="Password" placeholder="Password" name="Password" id="Password">
+      <input class="form-control" type="Password" placeholder="Password" name="password" id="password">
     </div>
   </div>
   <div class="form-actions">
-    <button class="btn blue" id="getotp" type="submit">
+    <button class="btn blue" id="register" type="submit">
       Submit
     </button>
   </div>
@@ -69,29 +69,58 @@
 
 
 <script>
-        jQuery(document).ready(function(){
-            $("#getotp").on("click", function(){
+        jQuery(document).ready(function () {
+            $("#register").on("click", function () {
                 var telephone = $("#telephone").val();
-                if (telephone == null || telephone =="") {
+                var password = $("#password").val();
+                var age = $("#age").val();
+                var gender = $("#gender").val();
+                var name = $("#name").val();
+                var otpCode = $("#otpCode").val();
+
+                if (telephone == null || telephone == "") {
                     alert("telephone cannot be empty");
                     return false;
                 }
+                if (password == null || password == "") {
+                    alert("password cannot be empty");
+                    return false;
+                }
+                if (age == null || age == "") {
+                    alert("age cannot be empty");
+                    return false;
+                }
+                if (gender == null || gender == "") {
+                    alert("gender cannot be empty");
+                    return false;
+                }
+                if (otpCode == null || otpCode == "") {
+                    alert("gender cannot be empty");
+                    return false;
+                }
+
                 $.ajax({
-                    type:"POST",
-                    contentType:"application/x-www-form-urlencoded",
-                    url:"http://localhost:8090/user/getotp",
-                    data:{
-                        "telephone":$("#telephone").val(),
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded",
+                    url: "http://localhost:8090/user/register",
+                    data: {
+                        "telephone": $("#telephone").val(),
+                        "password": password,
+                        "age": age,
+                        "gender": gender,
+                        "otpCode": otpCode,
+                        "name": name
                     },
-                    success:function(data) {
+                    xhrFields:{withCredentials:true},
+                    success: function (data) {
                         if (data.status == "success") {
-                            alert("otp is sent to your telephone. Please check it");
+                            alert("Register successfully");
                         } else {
-                            alert("ope send failed. Reason is " + data.data.errMsg)
+                            alert("Register failed. Reason for fail is " + data.data.errMsg)
                         }
                     },
-                    error:function(data){
-                        altert("opt failure, Reason is "+data.responseText);
+                    error: function (data) {
+                        alert("Register failure, Reason2 for error is " + data.responseText);
                     }
                 })
                 return false;

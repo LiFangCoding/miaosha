@@ -17,14 +17,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import sun.misc.BASE64Encoder;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 @Controller("user")
 @RequestMapping("/user")
-@CrossOrigin
+@CrossOrigin(allowCredentials="true", allowedHeaders = "*")
 public class UserController extends BaseController{
 
   @Autowired
@@ -43,7 +46,7 @@ public class UserController extends BaseController{
       @RequestParam(name="name") String name,
       @RequestParam(name="gender") String gender,
       @RequestParam(name="age") Integer age,
-      @RequestParam(name="password") String password) throws BusinessException {
+      @RequestParam(name="password") String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException {
     // Validate telephone and otpcode is same
     String inSessionOtpCode = (String) this.httpServletRequest.getSession().getAttribute(telephone);
     if (!StringUtils.equals(otpCode, inSessionOtpCode)) {
@@ -57,9 +60,18 @@ public class UserController extends BaseController{
     userModel.setAge(age);
     userModel.setTelephone(telephone);
     userModel.setRegisterMode("byphone");
-    userModel.setEncryptPassword(MD5Encoder.encode(password.getBytes()));
+    userModel.setEncryptPassword(this.EncodeByMd5(password));
     userService.register(userModel);
     return CommonReturnType.create(null);
+  }
+
+  public String EncodeByMd5(String str) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    // determine cal method
+    MessageDigest md5 = MessageDigest.getInstance("MD5");
+    BASE64Encoder base64en = new BASE64Encoder();
+
+    String newstr = base64en.encode(md5.digest(str.getBytes("utf-8")));
+    return newstr;
   }
 
   /**

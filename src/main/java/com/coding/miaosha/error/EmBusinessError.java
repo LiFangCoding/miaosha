@@ -1,6 +1,5 @@
 package com.coding.miaosha.error;
 
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 public enum EmBusinessError implements CommonError{
   // Common error type. 10001

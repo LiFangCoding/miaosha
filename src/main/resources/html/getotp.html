@@ -43,6 +43,7 @@
                     data:{
                         "telephone":$("#telephone").val(),
                     },
+                    xhrFields:{withCredentials:true},
                     success:function(data) {
                         if (data.status == "success") {
                             alert("otp is sent to your telephone. Please check it");
@@ -52,7 +53,7 @@
                         }
                     },
                     error:function(data){
-                        altert("opt failure, Reason is "+data.responseText);
+                        alert("opt failure, Reason is "+data.responseText);
                     }
                 })
                 return false;

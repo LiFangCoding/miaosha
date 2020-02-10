@@ -8,10 +8,10 @@ import com.coding.miaosha.error.BusinessException;
 import com.coding.miaosha.error.EmBusinessError;
 import com.coding.miaosha.service.UserService;
 import com.coding.miaosha.service.model.UserModel;
-import org.apache.catalina.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,15 +42,18 @@ public class UserServiceImpl implements UserService {
       throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
     }
 
-    if (StringUtils.isEmpty(userModel.getName())
-        || userModel.getGender() == null
-        || userModel.getAge() == null
-    ||StringUtils.isEmpty(userModel.getTelephone())) {
+    if (StringUtils.isEmpty(userModel.getName()) || userModel.getGender() == null || userModel.getAge() == null || StringUtils.isEmpty(userModel.getTelephone())) {
       throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
     }
 
     UserDO userDO = convertFromModel(userModel);
-    userDOMapper.insertSelective(userDO);
+    try {
+      userDOMapper.insertSelective(userDO);
+    } catch (DuplicateKeyException ex) {
+      throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "telephone num is duplicated");
+    }
+
+    userModel.setId(userDO.getId());
 
     UserPasswordDO userPasswordDO = convertPasswordFromModel(userModel);
     userPasswordDOMapper.insertSelective(userPasswordDO);

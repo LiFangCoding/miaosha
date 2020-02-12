@@ -46,7 +46,6 @@ public class UserServiceImpl implements UserService {
     if (userModel == null) {
       throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
     }
-
     ValidationResult result = validator.validate(userModel);
     if (result.isHasErrors()) {
       throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, result.getErrMsg());

@@ -29,7 +29,7 @@ public class ValidatorImpl implements InitializingBean {
   }
 
   @Override
-  public void afterPropertiesSet() throws Exception {
+  public void afterPropertiesSet() {
     this.validator = Validation.buildDefaultValidatorFactory().getValidator();
   }
 }

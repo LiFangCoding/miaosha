@@ -29,5 +29,5 @@ public class ItemModel {
   private Integer sales;
 
   @NotBlank(message="image description cannot be empty")
-  private String imageUrl;
+  private String imgUrl;
 }

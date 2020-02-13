@@ -1,7 +1,12 @@
 package com.coding.miaosha.controller.viewobject;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 
+@Getter
+@Setter
 public class ItemVO {
   private Integer id;
 
@@ -15,5 +20,5 @@ public class ItemVO {
 
   private Integer sales;
 
-  private String imageUrl;
+  private String imgUrl;
 }
